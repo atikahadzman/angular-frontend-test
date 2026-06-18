@@ -1,1 +1,12 @@
-<p>dashboard works!</p>
+<div *ngIf="loading">
+    Loading...
+</div>
+
+<div *ngIf="errorMessage">
+    {{ errorMessage }}
+</div>
+
+<div *ngIf="data">
+    <h2>Overview</h2>
+    <app-donut-chart [data]="chartDonut"></app-donut-chart>
+</div>

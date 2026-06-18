@@ -16,6 +16,7 @@ import { environment } from '../environment/environment';
     ],
     templateUrl: './login.html',
     styleUrl: './login.scss',
+    standalone: true
 })
 export class Login {
     username = '';
