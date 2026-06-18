@@ -50,9 +50,6 @@ export class Dashboard implements OnInit {
             this.chartDonut = res.data.chartDonut;
             this.chartBar = res.data.chartBar;
             this.tableUsers = res.data.tableUsers;
-
-            console.log('===== chartbar ===== ' + JSON.stringify(this.chartBar));
-            console.log('===== tableUsers ===== ' + JSON.stringify(this.tableUsers));
         } catch (error: any) {
             this.errorMessage = error.response?.data?.message || 'Failed to fetch data';
             console.log('error: ' + JSON.stringify(error));
