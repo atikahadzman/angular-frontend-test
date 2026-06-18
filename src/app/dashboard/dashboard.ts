@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { environment } from '../environment/environment';
 import { DonutChart } from '../charts/donut-chart/donut-chart';
 import { BarChart } from '../charts/bar-chart/bar-chart';
+import { Users } from '../tables/users/users';
 
 @Component({
     selector: 'app-dashboard',
@@ -13,6 +14,7 @@ import { BarChart } from '../charts/bar-chart/bar-chart';
         CommonModule, 
         DonutChart,
         FormsModule,
+        Users,
     ],
     templateUrl: './dashboard.html',
     styleUrl: './dashboard.scss',
