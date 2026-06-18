@@ -4,10 +4,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../environment/environment';
 import { DonutChart } from '../charts/donut-chart/donut-chart';
+import { BarChart } from '../charts/bar-chart/bar-chart';
 
 @Component({
     selector: 'app-dashboard',
     imports: [
+        BarChart,
         CommonModule, 
         DonutChart,
         FormsModule,
@@ -26,7 +28,7 @@ export class Dashboard implements OnInit {
     loading = false;
     data: any = null;
     chartDonut: any = null;
-    chartbar: any = null;
+    chartBar: any = null;
     tableUsers: any = null;
 
     constructor() {}
@@ -44,8 +46,11 @@ export class Dashboard implements OnInit {
             });
             this.data = res.data;
             this.chartDonut = res.data.chartDonut;
-            this.chartbar = res.data.chartbar;
+            this.chartBar = res.data.chartBar;
             this.tableUsers = res.data.tableUsers;
+
+            console.log('===== chartbar ===== ' + JSON.stringify(this.chartBar));
+            console.log('===== tableUsers ===== ' + JSON.stringify(this.tableUsers));
         } catch (error: any) {
             this.errorMessage = error.response?.data?.message || 'Failed to fetch data';
             console.log('error: ' + JSON.stringify(error));

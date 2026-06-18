@@ -1,4 +1,4 @@
-.donut-box {
+.bar-box {
     border: 1px solid #d3d2d2;
     width: 600px;
     max-width: 100%;
@@ -7,13 +7,13 @@
 }
 
 @media (max-width: 768px) {
-    .donut-box {
+    .bar-box {
         max-width: 100%;
     }
 }
 
 @media (max-width: 428px) {
-    .donut-box {
+    .bar-box {
         width: 100%;
         margin: 10px 0;
     }

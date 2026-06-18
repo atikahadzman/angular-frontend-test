@@ -5,8 +5,14 @@
 <div *ngIf="errorMessage">
     {{ errorMessage }}
 </div>
-
-<div *ngIf="data">
-    <h2>Overview</h2>
-    <app-donut-chart [data]="chartDonut"></app-donut-chart>
+<div class="row">
+    <div class="charts-grid" *ngIf="data">
+        <h2>Overview</h2>
+        <div class="col-md-4">
+            <app-donut-chart [data]="chartDonut"></app-donut-chart>
+        </div>
+        <div class="col-md-4">
+            <app-bar-chart [data]="chartBar"></app-bar-chart>
+        </div>
+    </div>
 </div>
