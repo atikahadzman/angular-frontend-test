@@ -1,0 +1,38 @@
+<div class="login-wrapper">
+    <div class="login-box">
+        <h2>Sign in to your dashboard</h2>
+        
+        <form (ngSubmit)="login()">
+            <div class="form-group">
+                <input
+                    type="email"
+                    name="username"
+                    [(ngModel)]="username"
+                    placeholder="Username"
+                />
+            </div>
+
+            <div class="form-group">
+                <input 
+                    type="password"
+                    name="password"
+                    [(ngModel)]="password"
+                    placeholder="Password"
+                />
+            </div>
+
+            <!-- <button type="submit" [disabled]="!loginForm.valid">Log In</button> -->
+            <button
+                type="submit"
+                class="btn btn-primary"
+                [disabled]="loading">
+
+                {{ loading ? 'Signing in...' : 'Sign in' }}
+            </button>
+
+            <p class="error" *ngIf="errorMessage">
+                {{ errorMessage }}
+            </p>
+        </form>
+    </div>
+</div>
