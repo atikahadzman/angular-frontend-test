@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, finalize } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -17,7 +18,7 @@ import { Users } from '../tables/users/users';
     standalone: true
 })
 export class Dashboard implements OnInit {
-    constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
+    constructor(private router: Router, private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
     errorMessage = '';
     loading = false;
@@ -33,9 +34,15 @@ export class Dashboard implements OnInit {
     dashboard() {
         this.loading = true;
         this.errorMessage = '';
+        const token = localStorage.getItem('token');
+
+          if (!token || token == '' || token == 'undefined') {
+            this.router.navigate(['/login']);
+            return;
+        }
+
 
         const url = `${environment.apiUrl}${environment.endpoints.dashboard}`;
-        const token = localStorage.getItem('token');
         const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
 
         this.http.get<any>(url, { headers }).pipe(
