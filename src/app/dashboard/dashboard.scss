@@ -1,47 +1,33 @@
 // charts section
-.charts-grid {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: wrap;
-    width: 80%;
+.charts-grid,
+.table-grid {
+    width: 95%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 16px;
     box-sizing: border-box;
-    gap: 20px;
+}
+
+.charts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
 }
 
 .charts-grid h2 {
     width: 100%;
-    text-align: left;
     margin: 0 0 20px 0;
 }
 
-.charts-grid .row {
-    justify-content: center;
-}
-
-.col-md-4 {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-// users section
-.table-grid {
-    margin: 0 auto;
-    width: 80%;
-    padding: 16px;
+.charts-grid .col-md-4 {
+    flex: 1 1 450px;
+    max-width: 500px;
+    margin-bottom: 0;
 }
 
 .table-grid h2 {
-    width: 100%;
-    text-align: left;
     margin: 0 0 20px 0;
-}
-
-.table-grid .row {
-    justify-content: center;
 }
 
 @media (max-width: 768px) {
