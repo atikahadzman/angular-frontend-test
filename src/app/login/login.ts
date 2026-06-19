@@ -30,6 +30,11 @@ export class Login {
         this.loading = true;
         this.errorMessage = '';
 
+        if (!this.username || !this.password) {
+            this.errorMessage = 'Username and password are required';
+            return;
+        }
+
         try {
             const url = `${environment.apiUrl}${environment.endpoints.login}`;
             const response = await axios.post(url, {
