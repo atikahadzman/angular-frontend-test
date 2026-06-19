@@ -4,6 +4,12 @@
     max-width: 100%;
     box-sizing: border-box;
     display: block;
+    background-color: #FFF;
+}
+
+.custom-header {
+    background-color: #f3eaea;
+    color: #000;
 }
 
 @media (max-width: 768px) {
