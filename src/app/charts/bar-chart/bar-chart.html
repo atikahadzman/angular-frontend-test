@@ -5,9 +5,9 @@
     <mat-card-content>
         <div *ngIf="chartOptions">
             <apx-chart
-                [series]="chartOptions.series"
                 [chart]="chartOptions.chart"
-                [labels]="chartOptions.labels">
+                [series]="chartOptions.series"
+                [xaxis]="chartOptions.xaxis">
             </apx-chart>
         </div>
     </mat-card-content>
